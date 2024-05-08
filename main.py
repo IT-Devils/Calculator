@@ -5,21 +5,25 @@ print("Welcome\n"
       "Valid Operators: +, -, *, /.\n")
 
 
-def addition(a, b):
-    return a + b
+def re_use():
+    user_input_c = input("You want use the result? Enter yes or no: ")
+    return user_input_c
 
 
 while True:
     user_input_a = int(input("Enter the first Number: "))
     operator = input("Enter a Operator: ")
     user_input_b = int(input("Enter the second Number: "))
-    result_addition = addition(user_input_a, user_input_b)
+    last_result = 0
 
     if operator == "+":
-        addition(user_input_a, user_input_b)
-        print(result_addition)
+        result = user_input_a + user_input_b
+        print(result)
+        last_result = result
     elif operator == "-":
-        print(user_input_a - user_input_b)
+        result = user_input_a - user_input_b
+        last_result = result
+        print(result)
     elif operator == "*":
         print(user_input_a * user_input_b)
     elif operator == "/":
@@ -27,3 +31,10 @@ while True:
     else:
         print("Invalid Operator")
         print("Valid Operator are  +, -, *, /")
+
+    user_input_c = re_use()
+
+    if user_input_c == "yes":
+        print(last_result)
+    else:
+        continue
